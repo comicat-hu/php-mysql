@@ -9,14 +9,12 @@ require_once 'connect.php';
 $db = connect('mydb');
 
 try {
-
     $sql = "UPDATE myguests SET lastname='Doeeeee' WHERE id = 1";
     $statement = $db->prepare($sql);
     $statement->execute();
 
     echo $statement->rowCount();
-
-} catch (PDOException $e){
+} catch (PDOException $e) {
     echo $e->getMessage();
 }
 

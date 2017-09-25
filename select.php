@@ -9,8 +9,6 @@ require_once 'connect.php';
 $db = connect('mydb');
 
 try {
-
-
     $statement = $db->prepare("SELECT * FROM myguests");
     $statement->execute();
 
@@ -27,9 +25,7 @@ try {
     $result->setFetchMode(PDO::FETCH_ASSOC);
 
     print_r($result->fetchAll());
-    
-}
-catch(PDOException $e) {
+} catch (PDOException $e) {
     echo "Error: " . $e->getMessage();
 }
 $conn = null;
